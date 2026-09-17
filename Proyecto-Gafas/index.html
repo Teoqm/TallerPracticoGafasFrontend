@@ -1,0 +1,158 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proyecto Gafas - Pruebas</title>
+
+    <!-- CSS temporal -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #contenedor-gafas {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #333;
+        }
+
+        .producto {
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #999;
+        }
+
+        .destacado {
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        #resultado-api {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================================
+         TITULO Y DESCRIPCION
+         ========================================== -->
+
+    <h1 id="titulo">
+        Bienvenido a nuestra tienda de gafas
+    </h1>
+
+    <p class="descripcion">
+        Encuentra las mejores gafas para tu estilo.
+    </p>
+
+
+    <!-- ==========================================
+         CATEGORIAS
+         ========================================== -->
+
+    <h2>Categorias de gafas</h2>
+
+    <ul class="categorias">
+        <li>Gafas de sol</li>
+        <li>Gafas deportivas</li>
+        <li>Gafas casuales</li>
+    </ul>
+
+
+    <!-- ==========================================
+         BOTONES
+         ========================================== -->
+
+    <h2>Pruebas de JavaScript</h2>
+
+    <button id="btn-texto">
+        Cambiar texto
+    </button>
+
+
+    <button id="btn-estilo">
+        Cambiar estilo
+    </button>
+
+    <button id="btn-quitar-estilo">
+        Quitar estilo
+    </button>
+
+    <button id="btn-agregar">
+        Agregar gafa
+    </button>
+
+    <button id="btn-eliminar">
+        Eliminar ultima gafa
+    </button>
+
+    <button id="btn-api">
+        Consultar API
+    </button>
+
+
+    <!-- ==========================================
+         CONTENEDOR PARA LAS GAFAS
+         ========================================== -->
+
+    <h2>Gafas agregadas</h2>
+
+    <div id="contenedor-gafas">
+
+        <!--
+            Las gafas se agregaran aqui
+            mediante JavaScript.
+        -->
+
+    </div>
+
+
+    <!-- ==========================================
+         INFORMACION DE WINDOW
+         ========================================== -->
+
+    <h2>Informacion de la ventana</h2>
+
+    <p id="info-ventana">
+        Ancho de la ventana:
+    </p>
+
+
+    <!-- ==========================================
+         RESULTADO DE LA API
+         ========================================== -->
+
+    <h2>Datos de la API</h2>
+
+    <div id="resultado-api">
+        Aqui apareceran los datos de la API.
+    </div>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
+```
