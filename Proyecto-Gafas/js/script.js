@@ -100,9 +100,7 @@ btnTexto.addEventListener("click", function () {
 
 btnQuitar.addEventListener("click", function() {
 
-    titulo.style.fontSize = "40px";
-
-    titulo.classList.remove("destacado");
+   // titulo.classList.remove("destacado");
 
     console.log("se quito el destacado ");
 
@@ -218,6 +216,11 @@ btnEliminar.addEventListener("click", function () {
 });
 
 
+btnApi.addEventListener("click", function () {
+    consultarApi();
+
+});
+
 // NAVEGACION JERARQUICA DEL DOM
 
 
@@ -276,6 +279,7 @@ function actualizarInformacionVentana() {
 }
 
 
+
 // Ejecutamos la funcion al cargar la pagina
 
 actualizarInformacionVentana();
@@ -305,5 +309,73 @@ console.log(
     window.location.href
 );
 
+
+
+//API
+
+
+///se solicita la apia con su url 
+// Nos entraga solamente el Response 
+
+
+function consultarApi() {
+
+    fetch("https://dummyjson.com/products/category/sunglasses")
+
+        // Se recibe una respuesta
+        .then(function (respuesta) {
+
+            // Se convierte la respuesta en JSON
+            return respuesta.json();
+        })
+
+        // Se reciben los datos de la respuesta en JSON
+        .then(function (datos) {
+
+            console.log("Datos recibidos de la API:", datos);
+
+            datos.products.forEach(function (producto) {
+
+                // Se crea la tarjeta
+                const tarjeta = document.createElement("div");
+
+                // Se agrega una clase CSS
+                tarjeta.classList.add("producto-api");
+
+                // Se agrega la informacion del producto
+                tarjeta.innerHTML =
+                    "<h3>" + producto.title + "</h3>" +
+                    "<p>Precio: $" + producto.price + "</p>" +
+                    "<p>" + producto.description + "</p>";
+
+                // Se crea la imagen
+                const imagen = document.createElement("img");
+
+                // Se obtiene la imagen desde la API
+                imagen.src = producto.thumbnail;
+
+                // Se agrega texto alternativo
+                imagen.alt = producto.title;
+
+                // Se agrega la imagen a la tarjeta
+                tarjeta.appendChild(imagen);
+
+                // Se agrega la tarjeta al contenedor
+                resultadoApi.appendChild(tarjeta);
+            });
+        })
+
+        // Se manejan posibles errores
+        .catch(function (error) {
+
+            console.error(
+                "Error al consultar la API:",
+                error
+            );
+
+            resultadoApi.textContent =
+                "No se pudieron cargar las gafas.";
+        });
+}
 
 
